@@ -1,0 +1,97 @@
+.app-window {
+    position: absolute;
+    min-width: 320px;
+    min-height: 200px;
+    background: var(--window-bg);
+    backdrop-filter: var(--bg-blur);
+    -webkit-backdrop-filter: var(--bg-blur);
+    border: 1px solid var(--window-border);
+    border-radius: var(--radius-window);
+    box-shadow: var(--shadow-window);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity var(--anim-window-open) var(--ease-standard),
+                transform var(--anim-window-open) var(--ease-standard);
+}
+
+.app-window.opening {
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+.app-window.closing {
+    opacity: 0;
+    transform: scale(0.96);
+    transition-duration: var(--anim-window-close);
+
+}
+
+.app-window.focused {
+    border-color: rgba(255, 255, 255 , 0.2);
+
+}
+
+.window-titlebar {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--window-border);
+    cursor: default;
+    user-select: none;
+    flex-shrink: 0;
+
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    margin-right: 12px;
+
+}
+
+.window-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.window-dot.close { background: #FF5F57;}
+.window-dot.minimize { background: #FEBC2E;}
+.window-dot.maximise { background: #28C840;}
+
+.window-title {
+    font-size :13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    flex: 1;
+    text-align: center;
+    margin-right: 60px;
+
+}
+
+.window-body {
+    flex: 1;
+    overflow: auto;
+    padding: 16px;
+    font-size: 14px;
+    color: var(--text-primary);
+
+}
+
+.resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    cursor: nwse-resize;
+
+}

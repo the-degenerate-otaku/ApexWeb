@@ -14,6 +14,12 @@
             desktop.classList.remove('hidden');
             updateClock();
             setInterval(updateClock, 1000 * 30);
+
+            WindowManager.init();
+            WindowManager.openWindow({ title: 'Test Window', content: 'Hello ApexWeb', x: 200, y: 150 });
+
+
+
         }, 600);
     }, 1800);
 
