@@ -1,0 +1,137 @@
+:root {
+    --bg-blur:blur(24px);
+    --window-bg: rgba(30,30,34,0.65);
+    --window-border: rgba(255,255,255,0.12);
+    --taskbar-bg: rgba(20,20,24,0.55);
+    --taskbar-height: 32px;
+    --accent: #0A84FF;
+    --text-primary: rgba(255,255,255,0.92);
+    --text-secondary: rgba(255,255,255,0.55);
+    --radius-window: 12px;
+    --shadow-window: 0 20px 60px rgba(0,0,0,0.45);
+    --font-ui: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --anim-window-open: 220ms;
+    --anim-window-close: 160ms;
+    --radius-control: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+    font-family: var(--font-ui);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+}
+
+.hidden { display: none !important;}
+
+#boot-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 9999;
+    transition: opacity 600ms var(--ease-standard);
+}
+
+.boot-logo {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+
+}
+
+.boot-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 1.8s var(--ease-standard);
+
+}
+
+.boot-bar-track {
+    width: 220px;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#desktop {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+#wallpaper {
+    position: absolute;
+    top: var(--taskbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, #1e1e26 0%, #2a2a35 50%, #1a1a22 100%);
+
+}
+
+#taskbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--taskbar-height);
+    background: var(--taskbar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--window-border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    z-index: 1000;
+    font-size: 13px;
+}
+
+#start-button {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius:var(--radius-control);
+
+}
+
+#start-button {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: var(--radius-control);
+
+}
+
+#start-button:hover {
+    background: rgba(255,255,255,0.08) ;
+
+}
+
+#open-windows-tray {
+    flex: 1;
+    display: flex;
+    gap: 6px;
+    margin-left: 16px;
+
+}
+
+#clock-widget {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
