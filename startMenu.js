@@ -4,7 +4,7 @@ const StartMenu = (function () {
     let isOpen = false;
 
     const APPS = [
-        { id: 'fileExplorer', label: 'File Explorer', launch: () => WindowManager.openWindow({ title: 'File Explorer', content: 'File Explorer coming in CP6' }) },
+        { id: 'fileExplorer', label: 'File Explorer', launch: () => FileExplorer.launch() },
         { id: 'terminal', label: 'Terminal', launch: () => WindowManager.openWindow({ title: 'Terminal', content: 'Terminal coming in CP7' }) }
     ];
 

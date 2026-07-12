@@ -1,4 +1,4 @@
-const WindowFactory = (function () { // <-- Fixed capital F
+const WindowFactory = (function () { 
 
     function create(config) {
         const id = config.id || Kernel.generateWindowId();
@@ -30,7 +30,7 @@ const WindowFactory = (function () { // <-- Fixed capital F
         }
 
         wireControls(el, id);
-        wireFocus(el, id); // Matches function below
+        wireFocus(el, id); 
 
         return el;
     }
@@ -39,17 +39,17 @@ const WindowFactory = (function () { // <-- Fixed capital F
         const closeBtn = el.querySelector('.window-dot.close');
         const minBtn = el.querySelector('.window-dot.minimize');
 
-        closeBtn.addEventListener('click', () => { // <-- Fixed spelling
+        closeBtn.addEventListener('click', () => { 
             Kernel.emit('window:closeRequest', { id });
         });
 
-        minBtn.addEventListener('click', () => { // <-- Fixed spelling
+        minBtn.addEventListener('click', () => { 
             Kernel.emit('window:minimizeRequest', { id });
         });
     }
 
-    function wireFocus(el, id) { // <-- Fixed capital F
-        el.addEventListener('mousedown', () => { // <-- Fixed spelling
+    function wireFocus(el, id) {
+        el.addEventListener('mousedown', () => {
             Kernel.emit('window:focusRequest', { id });
         });
     }

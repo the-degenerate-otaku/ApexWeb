@@ -9,12 +9,13 @@ const WindowManager = (function () {
         Kernel.on('window:minimizeRequest', ({ id }) => minimizeWindow(id));
     }
 
+
     function openWindow(config) {
         const el = WindowFactory.create(config);
         const layer = document.getElementById('window-layer');
         layer.appendChild(el);
 
-        windows[el.id] = { el, minimized: false };
+        windows[el.id] = { el, minimized: false, title: config.title || 'Untitled' };
 
         requestAnimationFrame(() => {
             el.classList.add('opening');
@@ -76,6 +77,7 @@ const WindowManager = (function () {
     function getOpenWindows() {
         return Object.keys(windows).map(id => ({
             id,
+            title: windows[id].title,
             minimized: windows[id].minimized
         }));
     }

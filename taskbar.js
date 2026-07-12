@@ -1,6 +1,3 @@
-// taskbar.js
-// Renders the open-windows tray and wires the start button.
-// Listens to Kernel window events instead of polling WindowManager directly.
 
 const Taskbar = (function () {
     function init() {
@@ -22,7 +19,7 @@ const Taskbar = (function () {
         WindowManager.getOpenWindows().forEach(win => {
             const chip = document.createElement('div');
             chip.className = 'taskbar-chip' + (win.minimized ? ' minimized' : '');
-            chip.textContent = win.id;
+            chip.textContent = win.title;
             chip.addEventListener('click', () => {
                 if (win.minimized) {
                     WindowManager.restoreWindow(win.id);

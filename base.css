@@ -215,3 +215,93 @@ body {
 .start-menu-item:hover {
     background: rgba(255,255,255,0.08);
 }
+
+.file-explorer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: -16px;
+}
+
+.fe-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--window-border);
+    flex-shrink: 0;
+}
+
+.fe-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: var(--radius-control);
+    background: rgba(255,255,255,0.06);
+    cursor: pointer;
+}
+
+.fe-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.fe-path {
+    flex: 1;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.fe-grid {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 12px;
+    padding: 16px;
+    overflow: auto;
+}
+
+.fe-item {
+    width: 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: var(--radius-control);
+}
+
+.fe-item:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+.fe-icon {
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.fe-label {
+    font-size: 12px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.fe-editor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: -16px;
+}
+
+.fe-textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 12px;
+    resize: none;
+}

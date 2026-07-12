@@ -1,7 +1,3 @@
-// vfs.js
-// In-memory virtual filesystem. Tree of nodes: { type: 'file'|'folder', name, children/content }.
-// Root always exists at id 'root'. Nothing here touches localStorage — per your artifact
-// constraints, everything resets on page refresh, which is expected for this scope.
 
 const VFS = (function () {
     let nextId = 1;
