@@ -49,7 +49,11 @@ const Terminal = (function () {
             historyIndex = history.length;
 
             const result = ShellCommands.run(trimmed, currentFolderId);
-            if (result.output) printLine(result.output);
+            if (result.clear) {
+                output.innerHTML = '';
+            } else if (result.output) {
+                printLine(result.output);
+            }
             if (result.newFolderId) currentFolderId = result.newFolderId;
             updatePrompt();
         }

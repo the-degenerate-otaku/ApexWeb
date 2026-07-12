@@ -8,26 +8,12 @@
     });
 
     setTimeout(() => {
-        bootScreen.style.opacity = '0'
+        bootScreen.style.opacity = '0';
         setTimeout(() => {
             bootScreen.classList.add('hidden');
             desktop.classList.remove('hidden');
             updateClock();
             setInterval(updateClock, 1000 * 30);
-
-            // Test block for testing obv
-            VFS.init();
-            WindowManager.init();
-            DragResize.init();
-            ContextMenu.init();
-            Desktop.init();
-            Taskbar.init();
-            StartMenu.init();
-            WindowManager.openWindow({ title: 'Test Window', content: 'Hello ApexWeb', x: 200, y: 150 });
-
-
-
-
         }, 600);
     }, 1800);
 
