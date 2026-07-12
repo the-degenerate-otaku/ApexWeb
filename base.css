@@ -180,3 +180,38 @@ body {
     bottom: 0;
     z-index: 2;
 }
+
+#start-menu {
+    position: absolute;
+    top: var(--taskbar-height);
+    left: 8px;
+    width: 220px;
+    background: var(--window-bg);
+    backdrop-filter: var(--bg-blur);
+    -webkit-backdrop-filter: var(--bg-blur);
+    border: 1px solid var(--window-border);
+    border-radius: var(--radius-control);
+    padding: 6px;
+    z-index: 10000;
+    box-shadow: var(--shadow-window);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 180ms var(--ease-standard),
+                transform 180ms var(--ease-standard);
+}
+
+#start-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.start-menu-item {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: var(--radius-control);
+    cursor: pointer;
+}
+
+.start-menu-item:hover {
+    background: rgba(255,255,255,0.08);
+}
